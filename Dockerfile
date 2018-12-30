@@ -6,11 +6,10 @@ RUN mkdir /blynk
 RUN curl -L https://github.com/blynkkk/blynk-server/releases/download/v${BLYNK_SERVER_VERSION}/server-${BLYNK_SERVER_VERSION}.jar > /blynk/server.jar
 
 # Create data folder. To persist data, map a volume to /data
-RUN mkdir /data
-
 # Create configuration folder. To persist data, map a file to /config/server.properties
-RUN mkdir /config && touch /config/server.properties
+RUN mkdir /data /config
 VOLUME ["/config", "/data/backup"]
+RUN touch /config/server.properties
 
 # IP port listing:
 # 8080: Hardware without ssl/tls support
