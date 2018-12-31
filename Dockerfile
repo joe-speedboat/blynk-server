@@ -10,7 +10,7 @@ RUN ln -s usr/local/bin/docker-entrypoint.sh / # backwards compat
 # Create data folder. To persist data, map a volume to /data
 # Create configuration folder. To persist data, map a file to /config/server.properties
 RUN mkdir /data /config
-VOLUME ["/config", "/data/backup"]
+VOLUME ["/config", "/data"]
 
 # IP port listing:
 # 8080: Hardware without ssl/tls support
